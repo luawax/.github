@@ -27,40 +27,46 @@ confidence to work with Lua and even the version 5.1 (from 16 years ago)
 are still being heavily used.
 
 
-Why Axa?
---------
-Lua community is great and grows each day, but lacks a referential point, that
-means: 
+Axa Mission
+-----------
 
-* 5 or more modules about the same task, some of them:
-  - or not well documented;
-  - or not well designed (strange api, forced paradigms);
-  - or not well maintained;
+Axa intends to make Lua an universal scripting language providing
+quality extensions to the Lua language core. While it looks ambitious,
+it can be simpler that with any other language, due to the
+Lua simplicity.
 
-> It is frustrating start to use a library and feel insecure about how it
-> will be maintained.
+By an universal scripting language some points should be considered:
 
-* the argument of do _it yourself_ kind:
-  - copy and paste this snipped;
-  - rewrite everywhere the same pile of boilerplate code;
-  - the good practice is that makes you feel better;
+* Lua is an unobstrusive language, i.e. user can use its creativity
+  with less limitations than in any other language.
+* Lua can be learned easily, even in minutes.
+* Lua is __green__, i.e., being fast, needs less system resources 
+  and can be effectively used almost anywhere.
+* As an extension language, Lua can turn everything programmable.
 
-> Also it is frustrating walk in circles without confidence about the next step.
 
-Here emerge Axa, an attempt of:
+What need to be done, so? Why should be other Lua project?
 
-* have the best implementation;
-* have the simplest and intuitive usage;
-* improve expressiveness;
-* have good test coverage;
-* be well documented;
-* be previsible as the Lua core;
+1. **Provide simple and well documented critical modules.** Some basic
+things needs today two or three different dependencies, some lacking
+functionality, others not well documented and others staled or lacking
+support for newer Lua versions.
+
+2. **Avoid boilerplate.** If the developer feels comfortable with
+its tooling it can be longer.
+
+2. **Ecosystem.** Provide development tools to enhance the Lua modules
+development, documentation and test. Example: T3D (Test Documentation
+Driven Development), test container, documentation tools etc.
 
 
 Philosophical Flame
 -------------------
-
 ... or survival manual.
+
+
+Some rays of inspiration to motivate the Axa project, and perhaps your
+future Lua projects...
 
 > 1. If you know where are you going, you will have more chances to find the
 > path. If you know from where you came, you know how not to return.
@@ -70,26 +76,28 @@ Philosophical Flame
 * Why you came by that way? Well written tests are also documentation;
 
 
-> 2. The traveller that doesn't map its progress needs to rediscover it again
-> everyday.
+> 2. The traveller that doesn't map its progress needs to rediscover
+> it again everyday.
 
-Write good documentation, not outside code but _inside it_:
+Write good documentation, not outside code but _inside its tests_:
 
 * Point the traps;
 * Explain how to use and when not to use;
+
 * Golden rule 1: Avoid to be so silent;
 * Golden rule 2: Avoid to be merely a chatter;
 
 
-> 3. Reforming is good, rebuild is not. If a house is built on good ground,
-> with good foundations, you can reform it, improve it everyday. Otherwise
-> anything will be breaking changes or lead to improvisation of crumbling roof
-> and walls.
+> 3. Reforming is good, rebuild is not. Foundations shouldn't be
+> reformed, only improved, unless you just want to ruin it all.
 
 * Think before start (plan tests);
 * Choose the right place (library, naming etc.);
 * Chose the right material (smaller and robust dependencies);
 * Do each thing at its time (write code to be time resistant);
+
+Good code, is time proof. Unnecessary breaking changes are wasteful
+since a lot of code everywhere can be using your code.
 
 
 > 4. You can do things with ten different tools... but if you choose to carry
@@ -100,6 +108,10 @@ Write good documentation, not outside code but _inside it_:
 * You can pay with life and pain if you want to carry it all;
 * You can loose moment if you choose the wrong tool;
 * Prefer the simpler, compact and multipurpose;
+
+Lua can emulate almost any development paradigm. But is better learn where
+to use to use Object Oriented, Functional, Procedural etc. paradigms
+instead of make code bloated by using the wrong mindset in the wrong place.
 
 
 > 5. The hurry is the enemy of the advance. You may need to come back when you
@@ -119,7 +131,7 @@ Characteristics:
 
 * A single Luarock;
 * Extends the Lua standard library;
-* Have minimal dependencies (almost the same C libraries of Lua itself);
+* Has minimal dependencies, basically present in any POSIX compliant system;
 * Serve to support the most common development tasks;
 
 Example of targetet tasks:
