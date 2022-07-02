@@ -39,7 +39,7 @@ development, documentation and test. Example: T3D (Test Documentation
 Driven Development), test container, documentation tools etc.
 
 
-[Code of Conduct](code-of-conduct.md)
-[Plans](plans.md)
+* [Code of Conduct](code-of-conduct.md)
+* [Plans](plans.md)
 
 

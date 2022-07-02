@@ -1,66 +1,94 @@
-Roadmap
--------
+# Plans
 
-#### Eos library
+This document contains what Axa project plans to do. It is not a strict
+roadmap, but serve to give the North to the project and collect interesting
+wider to-do's.
+
+
+
+## Libraries
+
+
+### Eos
+
+While scripting, most of time we need wide basic functions to handle from
+strings to files, from math to communication. In this context Eos should
+fit well.
 
 Characteristics:
 
-* A single Luarock;
-* Extends the Lua standard library;
-* Has minimal dependencies, basically present in any POSIX compliant system;
-* Serve to support the most common development tasks;
+* A single Lua rock with a bunch of modules
+* Extends the standard Lua library
 
-Example of targetet tasks:
+Focus:
 
-- TDD;
-- File System;
-- Shell facilities;
-- Advanced string handling alternatives;
-- Specific table handling (for lists and records);
+* System paths handling (parse, listing, changing)
+* System users handling (get information from system users)
+* Lua data handling (serialization and prettyfication)
+* Tests (assertion and comparison tooling to improve tdd)
+* Cryptography
+* utf-8 (Lua string counterpart functions like `mb_*` of PHP)
+* Basic paralelism
+* Basic http communication
+* Basic data format handling (CSV, JSON, XML/HTML, conf)
+* Templating
 - Functional programming helpers;
-- Json parsing;
-- Multithread and or paralelism;
-
-The restriction to be on Eos library is have minimal dependences, i.e, use the
-same C libraries that Lua uses itself and be target to the more core and common
-tasks.
+* FFI
+* ...
 
 
-#### Comet libraries
+### Aster
 
-Follows the Eos philophy of simplicity, but rather than be a single module
-can be multiple ones.
+For tasks that go beyond basics. While Eos can be used in these scenarios, a
+specialized library might be needed.
+
+Example: a frontend representation of filesystem. While Eos and Lua standard
+library can list files, get contents and properties etc. A specialized library
+for UI can be used. This library could be developed following Eos patterns. It
+would then be an Aster library.
 
 Characteristics:
 
-* Each module target one matter;
-* Uses own naming for actions not being restricted to the dependencies names;
-* Can implement diferent dependencies on different platforms but should always
-yield the same consistent result;
-* Can be refactored to well maintained dependency C libraries, but always
-maintaining the same api (function names, arguments and values);
+* Multiple Lua rocks.
+* Each rock specialized in a theme containting multiple modules.
+
+Some ideas:
+
+* Specific format parsing (Jmespath, Yaml, Toml)
+* Color math (RGB, RBGa, CYMK, HSL, HSV, LSB etc.)
+* ...
 
 
-#### Exo libraries
+### Echo
 
-Very peculiar to be standardized... basically the members of Exo class will be
-external robust libraries but that have very peculiar properties and that cannot
-be fully functional for all platforms.
+External library specific. Focus here is in most used libraries for diversified
+tasks. It must follow Eos principles but are not "format of task" targeted, but
+"tooling of task" targeted. I.e. while Eos and Aster focus on kind of task, Echo
+focus on the tools. Here could have an `aster-curl` module, and an `aster-wget`
+to do similar things but accordingly to the library-dependent capabilities.
 
-Characteristcs:
+Characteristics:
 
-* Specific domain tasks - not so common;
-* Depencency targeted - it should be like a binding to use the library specific
-abilities;
-* 3rd part intuitive - the library upon the module works should be well;
-documented, and the user should be capable of programming in Lua understanding
-the 3rd party documentation (as well as module tests);
-* Minimalism oriented - should be prioritized the libraries with some
-similarity of the Axa project i.e. be simple, small, concise etc;
+* External library dependent
+* Must follow Eos interfaces.
 
-Examples:
+Some ideas:
 
 * LibVips for image processing;
 * Curl for general purpose url handling;
 * Nuklear for agnostic graphical interfaces;
+
+
+## Tools
+
+* `auge` - document generation from Markdown annotated Lua files containing
+tests. Eos, Aster and Echo should have tests written in this format. The `auge`
+tool will extract the documentation from these tests and generate markdown files
+and possibly other files. At start, markdown is prefered due to ready usage on
+project readme files.
+
+* `luax` - basically a C header containing abstraction for most used Lua C API
+tasks. While making C shorter, allows interchangeability between Lua versions,
+good pratices folling Eos patterns.
+
 
