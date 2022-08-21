@@ -1,30 +1,10 @@
-Axa Project
-===========
+Wax Lua Development
+===================
 
-Axa is a ecosystem development project that aims to create
-libraries and tools to ease programming with Lua.
-
-
-Why Lua?
---------
-
-Lua has one of the simplest programming syntaxes, at the
-same time that can emulate almost all programming paradigms. Also
-is the scripting languages with lowest memory footprints.
-
-A good point is that Lua is only the core of language. While it have
-only very basic functions in its standard library, it empower users
-to write things in its own way. Such minimalism avoid the core language
-avoid it of become heavy, complex and bloated.
+Wax intend to expand the ways you use Lua on everyday needs.
 
 
-Axa Mission
------------
-
-Axa intends to help Lua become an universal scripting language, not as
-an extension for other languages, but as a standalone too.
-
-What need to be done, so? Why should be other Lua project?
+The current mission is provide:
 
 1. **Provide simple and well documented critical modules.** Some basic
 things needs today two or three different dependencies, some lacking
@@ -40,6 +20,4 @@ Driven Development), test container, documentation tools etc.
 
 
 * [Code of Conduct](code-of-conduct.md)
-* [Plans](plans.md)
-
 
