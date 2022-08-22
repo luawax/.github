@@ -1,9 +1,9 @@
-Axa code of conduct
+Wax Code of conduct
 -------------------
 
-Axa is about empowering mankind and its ecosystem. It is expected these
-guidelines be followed by every contributor and any action that be
-considered a contribution to the project or to the project users.
+Wax is about empowering mankind and its ecosystem. It is expected these
+guidelines be followed by every contributor in every interaction with the
+project, author or contributors.
 
 * **Be patient**. Patience leads to good code, good relations, good answers.
 
